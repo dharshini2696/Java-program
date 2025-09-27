@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int size = scanner.nextInt();
+        int arr[] = new int[size];
+        int evenSum = 0, oddSum = 0;
+        for(int i=0; i<size; i++) {
+            arr[i]=scanner.nextInt();
+        }
+        int pos = scanner.nextInt();
+        if(pos<0||pos>size+1) {
+            System.out.println("Invalid");
+        }
+        else {
+            int element = scanner.nextInt();
+            for(int i=size; i>pos;i--) {
+                arr[i] = arr[i-1];
+            }
+            arr[pos]=element;
+        }
+        for(int x:arr) {
+            System.out.println(x+" ");
+        }
+     }
+}
